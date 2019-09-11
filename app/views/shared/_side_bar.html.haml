@@ -1,0 +1,19 @@
+.chat-side
+  .side-header
+    .side-header__box
+      .side-header__box--title
+        = current_user.name
+      .side-header__box--icons
+        = link_to new_group_path, class: "side-header__box--icons--icon" do
+          %i.fa.fa-edit
+        = link_to edit_user_path(current_user), class: "side-header__box--icons--icon" do
+          %i.fa.fa-cog
+  .side-body
+    .groups
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group), class: "link" do
+          .group
+            .group__title
+              = group.name
+            .group__new-messages
+              メッセージはまだありません。

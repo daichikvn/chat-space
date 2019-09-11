@@ -1,31 +1,18 @@
-.chat-side
-  .chat-side__header
-    .chat-side__header__box
-      .chat-side__header__box--title
-        test-user
-      .chat-side__header__box--icons
-        = link_to root_path, class: "chat-side__header__box--icons--icon" do
-          %i.fa.fa-edit
-        = link_to root_path, class: "chat-side__header__box--icons--icon" do
-          %i.fa.fa-cog
-
-  .chat-side__body
-    = render "groups"
-
+= render 'shared/side_bar'
 .chat-main
-  .chat-main__header
-    .chat-main__header__left-box
-      .chat-main__header__left-box--title
+  .main-header
+    .main-header__left-box
+      .main-header__left-box--title
         test-group
-      .chat-main__header__left-box--member
+      .main-header__left-box--member
         Member：test-user
-    .chat-main__header__edit-btn
+    .main-header__edit-btn
       Edit
-  .chat-main__body
+  .main-body
     = render "posts"
-    .chat-main__body--messages
-  .chat-main__form
-    .chat-main__form__input-box
+    .main-body--messages
+  .main-form
+    .input-box
       %input.message__text{placeholder: "type a message", type: "text"}
       %label.message__image{for: "message_image"}
         %i.fa.fa-image
