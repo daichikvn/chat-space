@@ -1,23 +1,22 @@
-= render 'shared/side_bar'
-.chat-main
-  .main-header
-    .main-header__left-box
-      .main-header__left-box--title
-        test-group
-      .main-header__left-box--member
-        Member：test-user
-    .main-header__edit-btn
-      Edit
-  .main-body
-    = render "posts"
-    .main-body--messages
-  .main-form
-    .input-box
-      %input.message__text{placeholder: "type a message", type: "text"}
-      %label.message__image{for: "message_image"}
-        %i.fa.fa-image
-        %input.message__image__file#message_image{type: "file"}
-      %input.send-btn{value: "Send", type: "submit"}
-
-
-
+.wrapper
+  = render 'shared/side_bar'
+  .chat-main
+    .main-header
+      .main-header__left-box
+        .main-header__left-box--title
+          test-group
+        .main-header__left-box--member
+          Member：test-user
+      .main-header__edit-btn
+        Edit
+    .main-body
+      = render "posts"
+    .main-form
+      .form
+        = form_for [@group, @message] do |f|
+          .input-box
+            = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+            = f.label :image, class: 'input-box__image' do
+              = fa_icon 'picture-o'
+              = f.file_field :image, class: 'input-box__image__file'
+          = f.submit 'Send', class: 'send-btn'
