@@ -7,7 +7,8 @@
           = @group.name
         .main-header__left-box--member
           %label Member：
-          = @group.users
+          - @group.users.each do |user|
+            = user.name
       .main-header__edit-btn
         Edit
     .main-body
