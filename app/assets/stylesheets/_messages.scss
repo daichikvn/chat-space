@@ -1,3 +1,6 @@
+.wrapper {
+  box-sizing: border-box;
+}
 .chat-main {
   width: calc(100vw - 300px);
   float: left;
@@ -32,34 +35,46 @@
   }
 }
 .main-body {
-  background-color: #fafafa;
   height: calc(100vh - 190px);
+  background-color: #fafafa;
+  overflow: scroll;
+}
+.message-box {
+  padding: 46px 40px;
 }
 .main-form {
   background-color: #ddd;
-  bottom: 0;
+  height: 90px;
+}
+.new_message {
+  display: flex;
   padding: 20px 40px;
 }
 .input-box {
+  position: relative;
   width: 100%;
   display: flex;
-  position: relative;
-}
-.message__text {
-  height: 50px;
-  border-style: none;
-  width: 100%;
-  padding: 0 40px 0 10px;
-}
-.message__image {
-  position: absolute;
-  top: 10px;
-  right: 125px;
-  cursor: pointer;
-  font-size: 1.3rem;
-  &__file {
-    display: none;
+  &__text {
+    height: 50px;
+    width: 100%;
+    padding: 0 40px 0 10px;
+    color: #434a54;
+    border-style: none;
   }
+  &__image {
+    font-size: 1.3rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    &__file {
+      display: none;
+    }
+  }
+}
+.field_with_errors {
+  width: 100%;
+  display: flex;
 }
 .send-btn {
   width: 100px;
