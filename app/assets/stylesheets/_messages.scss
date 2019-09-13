@@ -39,6 +39,9 @@
   background-color: #fafafa;
   overflow: scroll;
 }
+.message-box {
+  padding: 46px 40px;
+}
 .main-form {
   background-color: #ddd;
   height: 90px;
@@ -68,6 +71,10 @@
       display: none;
     }
   }
+}
+.field_with_errors {
+  width: 100%;
+  display: flex;
 }
 .send-btn {
   width: 100px;

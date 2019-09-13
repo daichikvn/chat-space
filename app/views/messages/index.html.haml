@@ -4,13 +4,15 @@
     .main-header
       .main-header__left-box
         .main-header__left-box--title
-          test-group
+          = @group.name
         .main-header__left-box--member
-          Member：test-user
+          %label Member：
+          = @group.users
       .main-header__edit-btn
         Edit
     .main-body
-      = render "posts"
+      .message-box
+        = render partial: 'message', collection: @messages
     .main-form
       .form
         = form_for [@group, @message] do |f|
