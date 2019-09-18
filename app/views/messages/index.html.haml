@@ -9,8 +9,8 @@
           %label Member：
           - @group.users.each do |user|
             = user.name
-      .main-header__edit-btn
-        Edit
+      .main-header__btn
+        = link_to 'Edit', edit_group_path(@group), class: "edit-btn"
     .main-body
       .message-box
         = render partial: 'message', collection: @messages

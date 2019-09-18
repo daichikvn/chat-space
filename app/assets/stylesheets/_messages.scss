@@ -23,7 +23,7 @@
       padding-top: 15px;
     }
   }
-  &__edit-btn {
+  &__btn {
     float: right;
     margin-top: 30px;
     border: solid 1px #38aef0;
@@ -34,6 +34,11 @@
     color: #38aef0;
   }
 }
+.edit-btn {
+  color: #38aef0;
+  text-decoration: none;
+}
+
 .main-body {
   height: calc(100vh - 190px);
   background-color: #fafafa;
