@@ -3,17 +3,20 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   include Cloudinary::CarrierWave
 
+  process :convert => 'png' # 画像の保存形式
+  process :tags => ['image'] # 保存時に添付されるタグ（管理しやすいように適宜変更しましょう）
+
   process resize_to_fit: [800, 800]
 
   # Choose what kind of storage to use for this uploader:
   # storage :file
-  storage :fog
+  # storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
-  def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-  end
+  # def store_dir
+  #   "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  # end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
